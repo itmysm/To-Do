@@ -1,0 +1,459 @@
+@import './Global';
+@import './Dark';
+// global styles 
+.content--text {
+    color: $content-text;
+}
+
+.content {
+    //
+    .content--content {
+        //
+        .head--content {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            //
+            .item--head__content {
+                width: 50%;
+                height: 70px;
+                margin: 0 0em;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                background: $background2;
+                color: $title-text;
+                //
+                .text--head {
+                    top: 25px;
+                    position: relative;
+                    text-align: center;
+                }
+                //
+                .sub--head {
+                    border: 1px solid transparent;
+                    height: 5px;
+                    display: flex;
+                    justify-content: center;
+                    //
+                    .sub--animation {
+                        background-color: $other;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        // 
+        .content--list__mb {
+            background-color: $background;
+            //
+            .doIt--content {
+                overflow-x: scroll;
+                height: 94vh;
+                //
+                ul {
+                    //
+                    .todo {
+                        height: 70px;
+                        margin: .5em 1em;
+                        padding: 5px 10px;
+                        border-radius: 8px;
+                        background: $background2;
+                        color: $content-text;
+                        display: flex;
+                        justify-content: space-between;
+                        cursor: pointer;
+                        //
+                        &:hover {
+                            background-color: $shape;
+                        }
+                        //
+                        div {
+                            padding: 0 10px 0 0;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            //
+                            .done {
+                                width: 25px;
+                                height: 25px;
+                                margin: 0 5px;
+                                cursor: cell;
+                            }
+                        }
+                        //
+                        p {
+                            max-width: 156px;
+                            margin: 0;
+                            overflow: hidden;
+                            .index {
+                                color: $title-text;
+                                &:after {
+                                    content: '-';
+                                }
+                            }
+                            //
+                            small {
+                                color: $content-text;
+                            }
+                        }
+                    }
+                    // 
+                    .empty--content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            max-width: 500px;
+                            width: 90%;
+                        }
+                    }
+                }
+                // 
+                .img--banner__1 {
+                    max-width: 400px!important;
+                    width: 90%;
+                    margin: 4em 0 1em 0;
+                }
+                //
+                .img--banner__2 {
+                    max-width: 500px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+    //
+    .content--empty {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        background-color: $background;
+        justify-content: center;
+        align-items: center;
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 100%;
+                max-width: 500px;
+            }
+            .big--msg {
+                font-size: 64px;
+                margin: 0;
+            }
+            .info--msg {
+                margin: 0 0 1em 0;
+            }
+            #createToDo {
+                width: 125px;
+                background-color: transparent;
+                color: $content-text;
+                border: 1px solid $shape;
+                //
+                &:hover {
+                    background-color: $shape;
+                    color: $background
+                }
+            }
+        }
+    }
+    //
+    .content--create {
+        width: 100vw;
+        height: 100vh;
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        overflow: hidden;
+        top: -50%;
+        left: 0;
+        transform: translate(0, 50%);
+        background-color: rgb(0, 0, 0, 0.5);
+        //
+        .temp {
+            width: 100%;
+            max-width: 360px;
+            height: 500px;
+            margin: 1em;
+            padding: .5em 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $background2;
+            border-radius: 4px;
+            //
+            .close--temp {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                padding: 0 .5em;
+                img {
+                    width: 25px;
+                }
+            }
+            //
+            .input,
+            .select--option,
+            .textarea--box {
+                width: 100%;
+                padding: 0 1.5em;
+                margin: .5em 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: $content-text;
+                //
+                #title {
+                    width: 100%;
+                    color: $title-text;
+                    text-align: left;
+                }
+                //
+                input {
+                    width: 100%;
+                    max-width: 312px;
+                    padding: 3px 6px;
+                    font-size: $mb-content-create;
+                    border: 1px solid $content-text;
+                    background-color: transparent;
+                    color: $content-text;
+                    outline: none;
+                }
+                li {
+                    color: $background2;
+                }
+            }
+            // 
+            .textarea--box {
+                textarea {
+                    max-width: 312px;
+                    max-height: 232px;
+                    min-height: 232px;
+                    width: 100%;
+                    font-size: 14px;
+                    padding: 10px 10px;
+                    border: 1px solid $content-text;
+                    background-color: transparent;
+                    color: $content-text;
+                    outline: none;
+                }
+            }
+            // 
+            #saveToDo {
+                width: 95px;
+                background-color: transparent;
+                color: $content-text;
+                border: 1px solid $shape;
+                //
+                &:hover {
+                    background-color: $shape;
+                    color: $background
+                }
+            }
+        }
+    }
+    //
+    .content--tools {
+        max-width: 50px;
+        position: absolute;
+        overflow: hidden;
+        bottom: 0;
+        right: 0;
+        margin: 0 1em 0 0;
+        cursor: pointer;
+        //
+        .tools--list {
+            list-style: none;
+            padding: 0;
+            //
+            .tools--item {
+                width: 45px;
+                height: 45px;
+                border-radius: 25px;
+                margin: 0.5em 0;
+                background-color: $shape;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // 
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+    // 
+    .popup--message {
+        width: 235px;
+        height: 80px;
+        right: 10px;
+        top: 10px;
+        background: transparent;
+        border-radius: 6px 6px 0px 0px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        overflow: hidden;
+        //
+        .content--message {
+            width: 100%;
+            height: 95%;
+            padding: .7em;
+            color: $content-text;
+            //
+            p {
+                font-size: $mb-content-create;
+            }
+        }
+        //
+        .time--message {
+            width: 100%;
+            height: 5%;
+            background-color: $shape;
+            animation: toEnd 3s linear 1s both;
+        }
+    }
+    //
+    .content--ToDo__parent {
+        .temp {
+            width: 100%;
+            height: 444px;
+            padding: 1em;
+            display: flex;
+            align-items: flex-start;
+            //
+            .close--temp {
+                padding: 0;
+            }
+            //
+            .content--ToDo {
+                margin: 2em 0;
+                height: 360px;
+                overflow-y: auto;
+                p {
+                    margin: .5em 0;
+                    text-align: left;
+                    word-break: break-all;
+                    color: $differentColor;
+                    small {
+                        color: $content-text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+.hide--me {
+    animation: HideMe .2s linear 1 forwards;
+}
+
+.show--me {
+    animation: ShowMe .2s linear 1 forwards;
+}
+
+@keyframes HideMe {
+    0% {
+        width: 100%;
+        height: 30px;
+    }
+    50% {
+        width: 94%;
+        height: 34px;
+    }
+    100% {
+        width: 106%;
+        height: 34px;
+    }
+}
+
+@keyframes ShowMe {
+    0% {
+        width: 106%;
+        height: 34px;
+    }
+    50% {
+        width: 94%;
+        height: 34px;
+    }
+    100% {
+        width: 100%;
+        height: 30px;
+    }
+}
+
+@keyframes toEnd {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+// menu animation
+.sub--animation__class {
+    animation: sub--menu .5s linear both;
+}
+
+@keyframes sub--menu {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+// global select option styles 
+.select--box {
+    width: 100%;
+    //
+    .parent--box {
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        //
+        .box {
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid $content-text;
+            padding: 0 .5em;
+            //
+            p {
+                font-size: $mb-content-create;
+                margin: 0;
+            }
+        }
+    }
+    .items {
+        width: 100%;
+        max-width: 312px;
+        z-index: 2;
+        position: fixed;
+        //
+        .item {
+            width: 100%;
+            padding: 0 0.5em;
+            border: 1px solid $title-text;
+            background: $content-text;
+            //
+            &:hover {
+                background-color: $shape;
+            }
+        }
+    }
+}

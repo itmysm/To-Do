@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Animate -->
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/css/Global.css">
+    <link rel="stylesheet" href="./styles/css/Welcome.css">
+    <link rel="stylesheet" href="./styles/css/Content.css">
+    <link rel="stylesheet" href="./styles/css/Preloader.css">
+    <!-- Styles -->
+
+    <title>To-Do List</title>
+</head>
+
+<body>
+
+    <section class="master">
+
+        <!-- Loader section  -->
+
+        <section class="preloader">
+
+            <div class="load">
+
+                <hr/>
+                <hr/>
+                <hr/>
+                <hr/>
+
+            </div>
+
+        </section>
+
+
+        <!-- Welcome Section  -->
+
+        <section class="welcome d-none">
+
+            <div class="temp animate__animated">
+
+                <div class="temp--start animate__animated animate__fadeInLeft text-center">
+
+                    <div class="temp--poster">
+
+                        <img src="./other/images/Start.png" alt="Language">
+
+                    </div>
+
+
+                    <h2 class="text--start">Wel done, click to start</h2>
+
+                    <button class="btn btn-primary" id="btn-start">Let's Start</button>
+
+                </div>
+        </section>
+
+
+        <!-- Content Section -->
+        <section class="content d-none">
+
+            <!-- Original Content -->
+
+            <section class="content--content d-none d">
+
+                <!-- Menu -->
+                <div class="head--content">
+
+                    <div class="item--head__content" id="menu1">
+
+                        <div class="text--head">Do it</div>
+
+                        <div class="sub--head">
+
+                            <div class="sub--animation sub--animation__class"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item--head__content" id="menu2">
+
+                        <div class="text--head">Done</div>
+
+                        <div class="sub--head">
+
+                            <div class="sub--animation sub--animation__class"></div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Content list mobile version -->
+                <div class="content--list__mb">
+
+                    <div class="doIt--content">
+
+                        <ul class="list-unstyled " id="listDoIt">
+
+                        </ul>
+
+                        <ul class="list-unstyled" id="listDone">
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+            </section>
+
+            <!-- Content Empty  -->
+            <section class="content--empty animate__animated animate__fadeInUp animate__delay-1s d-none" id="contentEmpty">
+
+                <div>
+
+                    <img src="./other/svgs/Sad.svg" alt="">
+                    <p class="big--msg content--text">Oops</p>
+                    <h4 class="info--msg content--text">Looks like you haven't a to-do</h4>
+                    <button class="btn" id="createToDo">Create One!</button>
+
+                </div>
+
+            </section>
+
+            <!-- Create new ToDo section -->
+            <section class="content--create animate__animated d-none" id="create">
+
+
+                <div class="temp animate__animated animate__fadeInDownBig">
+
+                    <div class="close--temp" style="cursor: pointer;"><img src="./other/icons/Exit.png" alt=""></div>
+
+                    <div class="input" id="input">
+
+                        <label id="title">Name To-Do*</label>
+                        <input type="text" id="nameToDo" placeholder="Example: Go to gym" spellcheck="false" onkeypress="()=>{console.log('test');}">
+
+                    </div>
+
+                    <div class="select--option">
+
+                        <label id="title">Importance*</label>
+
+                        <div class="select--box" style="cursor: pointer;" id="selectBox">
+                            <div class="parent--box">
+                                <div class="box">
+
+                                    <p id="selected">Select</p>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+
+                                </div>
+                            </div>
+
+                            <ul class="items list-unstyled animate__animated animate__fadeIn d-none">
+                                <li class="item">Low</li>
+                                <li class="item">Normal</li>
+                                <li class="item">High</li>
+                                <li class="item">Very high</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="textarea--box animate__animated animate__fadeIn d-none" id="textArea">
+                        <label id="title">More Info <small>(Optional)</small></label>
+                        <textarea id="moreInfo" cols="30" rows="10" placeholder="Example: Go to party. drink and enjoy" spellcheck="false"></textarea>
+                    </div>
+
+
+                    <button class="btn mt-2 animate__animated animate__fadeIn d-none" id="saveToDo">Save</button>
+
+                </div>
+
+
+                </div>
+
+            </section>
+
+            <!-- tools menu in down page -->
+            <section class="content--tools">
+
+                <ul class="tools--list">
+                    <li class="tools--item animate__animated animate__backInUp" id="setting"><img src="./other/icons/Setting.png" alt="down"></li>
+
+                    <li class="tools--item animate__animated animate__backInUp d-none" id="sttingOut"><img src="./other/icons/Setting.png" alt="down"></li>
+                    <li class="tools--item animate__animated animate__backInUp d-none" id="createToDo2"><img src="./other/icons/Make.png" alt="Write"></li>
+                    <li class="tools--item animate__animated animate__backInUp d-none" id="sort"><img src="./other/icons/fillter.png" alt="filter"></li>
+                </ul>
+
+            </section>
+
+            <!-- popup message section -->
+            <section class="popup--message animate__animated animate__shakeX d-none" id="popupMsg">
+
+            </section>
+
+            <!-- Content ToDo -->
+            <section class="content--ToDo__parent  content--create animate__animated d-none" id="showContent">
+
+
+                <div class="temp animate__animated animate__fadeInDownBig">
+
+                    <div class="close--temp" style="cursor: pointer;" id="closeWindow"><img src="./other/icons/Exit.png" alt=""></div>
+
+                    <div class="content--ToDo">
+
+
+                    </div>
+
+                </div>
+
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </section>
+    <script src="./scripts/Sort.js"></script>
+    <script src="./scripts/OpenToDo.js"></script>
+    <script src="./scripts/EditToDos.js"></script>
+    <script src="./scripts/ToDoLists.js"></script>
+    <script src="./scripts/ToDo.js"></script>
+    <script src="./scripts/PopUp.js"></script>
+    <script src="./scripts/Content.js"></script>
+    <script src="./scripts/Welcome.js"></script>
+    <script src="./scripts/Preloader.js"></script>
+    <script src="./scripts/App.js"></script>
+</body>
+
+</html>

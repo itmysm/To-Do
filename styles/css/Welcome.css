@@ -1,0 +1,85 @@
+@font-face {
+  font-family: open-sans;
+  src: url(../../other/fonts/OpenSans-Light.ttf);
+}
+* {
+  font-family: open-sans;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.master {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Scroll bar styles */
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9ef183;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #627D98;
+}
+
+/* Scroll bar styles */
+.welcome {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.welcome .temp {
+  margin: 0 15px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.welcome .temp .temp--poster {
+  position: relative;
+  bottom: 3em;
+}
+.welcome .temp .temp--poster img {
+  max-width: 500px;
+  width: 90%;
+}
+.welcome .temp .text--start {
+  bottom: 3em;
+  font-weight: 600;
+  position: relative;
+}
+.welcome .temp #btn-start {
+  position: relative;
+  bottom: 4em;
+  width: 200px;
+  height: 45px;
+}
